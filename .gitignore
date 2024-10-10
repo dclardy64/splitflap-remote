@@ -1,0 +1,4 @@
+node_modules
+/splitflap
+/build
+/web/dist

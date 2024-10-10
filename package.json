@@ -1,0 +1,42 @@
+{
+  "name": "splitflap-remote",
+  "version": "1.0.0",
+  "main": "./build/index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development tsx --watch src/index.ts",
+    "build": "tsc",
+    "start": "cross-env NODE_ENV=production node build/index.js",
+    "preinstall": "git clone https://github.com/scottbez1/splitflap.git; cd splitflap/software/chainlink/js/packages/splitflapjs-proto; npm install; npm run build; cd ../splitflapjs-core; npm install; npm run build; cd ../splitflapjs-node; npm install; npm run build",
+    "full-clean": "rimraf splitflap build node_modules web/dist web/node_modules",
+    "clean": "rimraf build"
+  },
+  "author": "Dan Ferguson",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "express-async-errors": "^3.1.1",
+    "nocache": "^4.0.0",
+    "node-yaml-config": "^1.0.0",
+    "serialport": "^9.2.4",
+    "socket.io": "^4.8.0",
+    "splitflapjs-core": "file:splitflap/software/chainlink/js/packages/splitflapjs-core",
+    "splitflapjs-node": "file:splitflap/software/chainlink/js/packages/splitflapjs-node",
+    "splitflapjs-proto": "file:splitflap/software/chainlink/js/packages/splitflapjs-proto",
+    "spotify-web-api-node": "^5.0.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.16.6",
+    "@types/serialport": "^8.0.5",
+    "@types/spotify-web-api-node": "^5.0.11",
+    "cross-env": "^7.0.3",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.1",
+    "typescript": "^5.5.3"
+  }
+}
