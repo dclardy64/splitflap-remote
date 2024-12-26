@@ -7,7 +7,7 @@
 			<template v-slot:append>
 				<v-btn prepend-icon="mdi-theme-light-dark" :text="theme === 'dark' ? 'Light' : 'Dark'" @click="toggleTheme" ></v-btn>
 			</template>
-			
+
 		</v-app-bar>
 		<v-main>
 			<RouterView />
@@ -44,7 +44,7 @@ const navManual = ref(null)
 
 export type SplitflapState = { mode: 'manual' | 'scoreboard' | 'spotify' | 'queue', flaps: string }
 
-const splitflap = ref<SplitflapState>({ mode: 'manual', flaps: (new Array(30).fill(' ').join('')) })
+const splitflap = ref<SplitflapState>({ mode: 'manual', flaps: (new Array(24).fill(' ').join('')) })
 
 defineExpose({splitflap})
 

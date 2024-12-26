@@ -54,8 +54,8 @@ const createQueue = () => {
     queueToEdit.value = {
         name: 'myNewQueue',
         loop: false,
-        queue: [{ 
-            flaps: '     HELLO,         WORLD!    ',
+        queue: [{
+            flaps: '  HELLO,         WORLD! ',
             delay: 2000,
             await: true
         }]

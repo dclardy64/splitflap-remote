@@ -1,15 +1,15 @@
 <template>
-    <div class="display" ref="display" :style="{ width: xs || small ? '390px' : '600px'}">
+    <div class="display" ref="display" :style="{ width: xs || small ? '312px' : '480px'}">
         <div  class="flex-row">
-            <div v-for="i in 15" class="flex display-char" :class="charClass(i - 1)"
+            <div v-for="i in 12" class="flex display-char" :class="charClass(i - 1)"
                 @click="emit('select', i - 1)" :style="'background-color: ' + getColourFromChar(flaps[i - 1])">{{
                     getColourFromChar(flaps[i - 1]) ? '' : flaps[i - 1] }}
             </div>
         </div>
         <div class="flex-row">
-            <div v-for="i in 15" class="flex display-char" :class="charClass(i + 15 - 1)"
-                @click="emit('select', i + 15 - 1)" :style="'background-color: ' + getColourFromChar(flaps[i + 15 - 1])">
-                {{ getColourFromChar(flaps[i + 15 - 1]) ? '' : flaps[i + 15 - 1] }}
+            <div v-for="i in 12" class="flex display-char" :class="charClass(i + 12 - 1)"
+                @click="emit('select', i + 12 - 1)" :style="'background-color: ' + getColourFromChar(flaps[i + 12 - 1])">
+                {{ getColourFromChar(flaps[i + 12 - 1]) ? '' : flaps[i + 12 - 1] }}
             </div>
         </div>
     </div>
@@ -60,7 +60,7 @@ const { small, flaps, selectable, index } = defineProps({
 })
 
 const charClass = (i: number) => {
-    return { 
+    return {
         'selected-char': i === index,
         'pointer': index !== -2 || selectable,
         'char-small': small || xs.value,

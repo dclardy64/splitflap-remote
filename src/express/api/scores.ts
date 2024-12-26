@@ -64,7 +64,7 @@ const centerWord = (length: number, word: string): string => word.padStart(word.
 // Columns Example
 //  '  TOR  @  MTL  '
 //  '   0       0   ' 
-const createColumns = (game: Game) => (centerWord(7, game.away.short_name) + '@' + centerWord(7, game.home.short_name) + centerWord(7, game.away.score + '') + ' ' + centerWord(7, game.home.score + '')).toUpperCase()
+const createColumns = (game: Game) => (centerWord(7, game.away.short_name) + ' ' + centerWord(7, game.home.short_name) + centerWord(7, game.away.score + '') + ' ' + centerWord(7, game.home.score + '')).toUpperCase()
 // Rows Example:
 // 'LEAFS        0 '
 // 'CANADIENS    0 '

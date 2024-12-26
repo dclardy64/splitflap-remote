@@ -92,7 +92,7 @@ const props = defineProps<{ queue: Queue }>()
 const newQueue = ref<Queue>(JSON.parse(JSON.stringify(props.queue)))
 
 const newMessage = async () => {
-    newQueue.value.queue.push({ flaps: (new Array(30).fill(' ').join('')), await: true, delay: 2000 })
+    newQueue.value.queue.push({ flaps: (new Array(24).fill(' ').join('')), await: true, delay: 2000 })
     queueIndex.value = newQueue.value.queue.length - 1
     charIndex.value = 0
     // Wow this is hacky. nextTick seem to doesn't work properly with v-virtual-scroll. See: https://github.com/vuetifyjs/vuetify/issues/20482
@@ -108,7 +108,7 @@ const onKey = (key: string) => {
     const tmpAry = newQueue.value.queue[queueIndex.value].flaps.split('')
     switch (key) {
         case 'Clear':
-            newQueue.value.queue[queueIndex.value].flaps = Array(30).fill(' ').join('')
+            newQueue.value.queue[queueIndex.value].flaps = Array(24).fill(' ').join('')
             charIndex.value = 0
             break;
         case 'Escape':
@@ -124,27 +124,27 @@ const onKey = (key: string) => {
                 charIndex.value--
             break
         case 'ArrowUp':
-            if (charIndex.value - 15 < 0) {
+            if (charIndex.value - 12 < 0) {
                 if (queueIndex.value - 1 < 0)
                     return
                 else {
                     queueIndex.value--
-                    charIndex.value += 15
+                    charIndex.value += 12
                 }
             } else {
-                charIndex.value -= 15
+                charIndex.value -= 12
             }
             break
         case 'ArrowDown':
-            if (charIndex.value + 15 >= 30) {
+            if (charIndex.value + 12 >= 24) {
                 if (queueIndex.value + 1 >= newQueue.value.queue.length)
                     return
                 else {
                     queueIndex.value++
-                    charIndex.value -= 15
+                    charIndex.value -= 12
                 }
             } else {
-                charIndex.value += 15
+                charIndex.value += 12
             }
             break
         case 'ArrowLeft':
@@ -153,14 +153,14 @@ const onKey = (key: string) => {
                     return
                 else {
                     queueIndex.value--
-                    charIndex.value = 29
+                    charIndex.value = 23
                 }
             } else {
                 charIndex.value--
             }
             break;
         case 'ArrowRight':
-            if (charIndex.value + 1 >= 30) {
+            if (charIndex.value + 1 >= 12) {
                 if (queueIndex.value + 1 >= newQueue.value.queue.length)
                     return
                 else {

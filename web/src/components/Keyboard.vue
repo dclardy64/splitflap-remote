@@ -45,12 +45,12 @@ import { onMounted, onUnmounted, ref, computed } from 'vue'
 import { isMobile } from 'mobile-device-detect'
 
 const { disabled, enterDisabled, bottom } = defineProps({
-    disabled: { 
+    disabled: {
         type: Boolean,
         required: false,
         default: false
     },
-    enterDisabled: { 
+    enterDisabled: {
         type: Boolean,
         required: false,
         default: false
@@ -66,8 +66,8 @@ const emit = defineEmits<{ key: [value: string] }>()
 
 const keyboardRows = [
     { generic: 'QWERTYUIOP', alt: '1234567890' },
-    { generic: 'ASDFGHJKL', alt: '-.,?!$&@#\'' },
-    { generic: 'ZXCVBNM', alt: 'rwypg ' }
+    { generic: 'ASDFGHJKL', alt: '.!\'      ' },
+    { generic: 'ZXCVBNM', alt: '       ' }
 ]
 const lastRowIndex = keyboardRows.length - 1
 

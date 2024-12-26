@@ -77,8 +77,8 @@ const loop = async () => {
         } else {
             const trackTitle: string = item.name
             const artistName: string = item.artists === undefined ? '' : item.artists[0].name
-            const track = trackTitle.split('(')[0].split(' - ')[0].toUpperCase().padEnd(15, ' ').replace(/[^a-zA-Z0-9,.?@!&#$\-'\s]/g, ' ')
-            const artist = artistName.split('(')[0].split(' - ')[0].toUpperCase().padStart(15 - (track.length - 15), ' ').replace(/[^a-zA-Z0-9,.?@!&#$\-'\s]/g, ' ')
+            const track = trackTitle.split('(')[0].split(' - ')[0].toUpperCase().padEnd(12, ' ').replace(/[^a-zA-Z0-9,.?@!&#$\-'\s]/g, ' ')
+            const artist = artistName.split('(')[0].split(' - ')[0].toUpperCase().padStart(12 - (track.length - 12), ' ').replace(/[^a-zA-Z0-9,.?@!&#$\-'\s]/g, ' ')
             splitflap.SetFlaps(track + artist)
         }
     }).catch((err) => {

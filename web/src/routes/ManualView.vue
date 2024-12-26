@@ -48,14 +48,14 @@ const onKey = async (key: string) => {
                 index.value--
             break
         case 'ArrowUp':
-            if (index.value - 15 < 0)
+            if (index.value - 12 < 0)
                 return
-            index.value -= 15
+            index.value -= 12
             break
         case 'ArrowDown':
-            if (index.value + 15 >= 30)
+            if (index.value + 12 >= 24)
                 return
-            index.value += 15
+            index.value += 12
             break
         case 'ArrowLeft':
             if (index.value - 1 < 0)
@@ -63,7 +63,7 @@ const onKey = async (key: string) => {
             index.value--
             break;
         case 'ArrowRight':
-            if (index.value + 1 >= 30)
+            if (index.value + 1 >= 24)
                 return
             index.value++
             break
