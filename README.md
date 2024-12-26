@@ -38,3 +38,8 @@ Frontend
 cd web
 npm run dev
 ```
+
+
+## Dependecies
+
+Make sure that python3-serial and python3-protobyf are installed on a fresh raspbian instance.

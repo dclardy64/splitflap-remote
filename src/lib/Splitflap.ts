@@ -109,7 +109,7 @@ export class SplitFlap extends EventEmitter {
         const newLog = message.log?.msg
         if (newLog != null) {
           const ts = new Date()
-          this.#logs = this.#logs.slice(-30)
+          this.#logs = this.#logs.slice(-24)
           this.#logs.push([ts, newLog])
           this.emit('log', [ts, newLog])
         }
