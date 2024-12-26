@@ -20,7 +20,7 @@ const app = getCurrentInstance()
 const splitflap: Ref<SplitflapState> = app!.root.exposed!.splitflap
 
 const isLoading = ref(false)
-const flaps = ref(localStorage.getItem('manual') || (new Array(30).fill(' ').join('')))
+const flaps = ref(localStorage.getItem('manual') || (new Array(24).fill(' ').join('')))
 const index = ref(0)
 
 const onKey = async (key: string) => {
