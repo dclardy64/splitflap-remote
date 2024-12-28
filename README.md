@@ -1,6 +1,6 @@
 # Splitflap Remote
 
-A web service/app to control my 12x2 [splitflap display.](https://github.com/scottbez1/splitflap)
+A web service/app to control my 12x2 [splitflap display.](https://github.com/scottbez1/splitflap). The program is built on Node 20 LTS. Please make sure that you have that installed before starting.
 
 ## [Demo video](https://youtu.be/M93xxCkBs5A)
 
@@ -42,4 +42,4 @@ npm run dev
 
 ## Dependecies
 
-Make sure that python3-serial and python3-protobyf are installed on a fresh raspbian instance.
+Make sure that python3-serial and python3-protobyf are installed on a instance.
