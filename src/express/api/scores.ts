@@ -60,7 +60,7 @@ export const AbortScores = async () => {
     })
 }
 
-const centerWord = (length: number, word: string): string => word.padStart(word.length + Math.floor((length - word.length) / 2), ' ').padEnd(length, ' ')
+const centerWord = (length: number, word: string): string => word.padStart(word.length + Math.floor((length - word.length) / 2), ' ').padEnd(length, '')
 // Columns Example
 //  '  TOR  @  MTL  '
 //  '   0       0   ' 
