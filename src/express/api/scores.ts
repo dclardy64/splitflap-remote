@@ -64,11 +64,11 @@ const centerWord = (length: number, word: string): string => word.padStart(word.
 // Columns Example
 //  '  TOR  @  MTL  '
 //  '   0       0   ' 
-const createColumns = (game: Game) => (centerWord(7, game.away.short_name) + ' ' + centerWord(7, game.home.short_name) + centerWord(7, game.away.score + '') + ' ' + centerWord(7, game.home.score + '')).toUpperCase()
+const createColumns = (game: Game) => (centerWord(5, game.away.short_name) + '  ' + centerWord(5, game.home.short_name) + centerWord(5, game.away.score + '') + '  ' + centerWord(5, game.home.score + '')).toUpperCase()
 // Rows Example:
 // 'LEAFS        0 '
 // 'CANADIENS    0 '
-const createRows = (game: Game) => (game.away.medium_name.split(' ').pop()?.slice(0, 12).padEnd(12) + centerWord(3, `${game.away.score}`) + game.home.medium_name.split(' ').pop()?.slice(0, 12).padEnd(12) + centerWord(3, `${game.home.score}`)).toUpperCase()
+const createRows = (game: Game) => (game.away.medium_name.split(' ').pop()?.slice(0, 9).padEnd(9) + centerWord(3, `${game.away.score}`) + game.home.medium_name.split(' ').pop()?.slice(0, 9).padEnd(9) + centerWord(3, `${game.home.score}`)).toUpperCase()
 
 const loop = async (league: League, { id }: Game, style: 'column' | 'row' = 'row') => {
     isActive = true
